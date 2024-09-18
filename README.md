@@ -4,18 +4,11 @@
 
 ## 📁 Contenido
 
-- 🧑‍💻 **Piscine**: Mis primeros pasos en programación, desde C hasta la gestión de proyectos.
-- 🛠 **Algoritmos y estructuras de datos**: Dominando la lógica y la eficiencia.
-- 🚧 **Proyectos en desarrollo**: ¡Siempre aprendiendo algo nuevo!
+- **libft**
 
 ## 🔧 Herramientas y tecnologías
 
-- Lenguajes: `C`, `Python`, `Shell Scripting`, y más.
-- 💻 Entorno: Programación intensiva y colaborativa.
-
-## 🏅 Objetivo
-
-Formarme como desarrollador full-stack y estar listo para enfrentar cualquier reto del mundo tecnológico 🌐.
+- Lenguajes: `C`, `Shell Scripting`
 
 ---
 
