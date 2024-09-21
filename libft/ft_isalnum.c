@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 00:24:52 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/21 01:31:00 by psalmero         ###   ########.fr       */
+/*   Created: 2024/09/19 18:43:17 by psalmero          #+#    #+#             */
+/*   Updated: 2024/09/21 01:30:43 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
-int	ft_isdigit(int c)
+//#include <stdio.h>
+int	ft_isalnum(int c)
 {
-	if (c >= 48 && c <= 57)
+	if ((c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
 		return (1);
 	return (0);
 }
-
 /*
-int main(void)
+int	main(void)
 {
-	char test = 's';
+	char test = '*';
 
-	if (ft_isdigit(test))
-		printf("%c Es un numero", test);
+	if (ft_isalnum(test))
+		printf("%c es una letra o un numero", test);
 	else
-		printf("%c No es un numero", test);
-	return 0;
-}
-*/
+		printf("%c no es una letra o un numero", test);
+	return (0);
+}*/

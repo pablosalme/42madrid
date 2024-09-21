@@ -6,12 +6,11 @@
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 23:50:20 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/19 00:15:08 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/09/21 01:31:16 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <libc.h>
-#include <libc.h>*/
+/*#include <libc.h>*/
 
 int	ft_strlen(char *input_str)
 {

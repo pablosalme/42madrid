@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 00:24:52 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/21 01:31:00 by psalmero         ###   ########.fr       */
+/*   Created: 2024/09/21 01:32:05 by psalmero          #+#    #+#             */
+/*   Updated: 2024/09/21 01:42:57 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
-int	ft_isdigit(int c)
+//#include <stdio.h>
+int	ft_isascii(int c)
 {
-	if (c >= 48 && c <= 57)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }
-
 /*
 int main(void)
 {
-	char test = 's';
+	//char	test = 'a';
+	char	test = U'ä'; // special unicode
 
-	if (ft_isdigit(test))
-		printf("%c Es un numero", test);
+	if (ft_isascii(test))
+		printf("Es ascii");
 	else
-		printf("%c No es un numero", test);
-	return 0;
+		printf("No es ascii");
+	return (0);
 }
 */

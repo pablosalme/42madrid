@@ -6,7 +6,7 @@
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 00:08:36 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/19 00:30:21 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/09/21 01:30:53 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	ft_isalpha(int c)
 }
 
 /*
-int main(void){
+int main(void)
+{
 	char test = '9';
 
 	if (ft_isalpha(test))

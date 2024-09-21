@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 00:24:52 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/21 01:31:00 by psalmero         ###   ########.fr       */
+/*   Created: 2024/09/21 01:44:31 by psalmero          #+#    #+#             */
+/*   Updated: 2024/09/21 02:00:02 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
-int	ft_isdigit(int c)
+#include <stdio.h>
+int	ft_isprint(int c)
 {
-	if (c >= 48 && c <= 57)
+	if (c >= 32 && c <= 127)
 		return (1);
-	return (0);
+	else
+		return (0);
 }
 
-/*
 int main(void)
 {
-	char test = 's';
+	//char	test = 'a';
+	char	test = U'ä';
 
-	if (ft_isdigit(test))
-		printf("%c Es un numero", test);
+	if (ft_isprint(test))
+		printf("%c es printable", test);
 	else
-		printf("%c No es un numero", test);
-	return 0;
+		printf("%c no es printable", test);
+
+	return (0);
 }
-*/

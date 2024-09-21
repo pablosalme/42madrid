@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 00:24:52 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/21 01:31:00 by psalmero         ###   ########.fr       */
+/*   Created: 2024/09/21 01:25:08 by psalmero          #+#    #+#             */
+/*   Updated: 2024/09/21 01:31:23 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
-int	ft_isdigit(int c)
+//#include <stdio.h>
+int	ft_tolower(int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
 }
-
 /*
 int main(void)
 {
-	char test = 's';
+	char test = 'H';
 
-	if (ft_isdigit(test))
-		printf("%c Es un numero", test);
-	else
-		printf("%c No es un numero", test);
+	char lower = ft_tolower(test);
+	printf("%c antes de pasar por la funcion\n", test);
+	printf("%c despues de pasar por la funcion", lower);
 	return 0;
 }
 */
