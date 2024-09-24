@@ -6,11 +6,11 @@
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 18:17:10 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/22 17:29:21 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:05:24 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

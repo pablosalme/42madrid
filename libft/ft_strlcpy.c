@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 15:55:33 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/24 20:14:18 by psalmero         ###   ########.fr       */
+/*   Created: 2024/09/24 19:03:46 by psalmero          #+#    #+#             */
+/*   Updated: 2024/09/24 20:24:22 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
-	while (*s != (unsigned char)c && *s != '\0')
+	unsigned int	i;
+
+	i = 0;
+	if (dstsize > 0)
 	{
-		s++;
+		while (i < dstsize -1 && src[i] != '\0')
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	if (*s == (unsigned char)c)
-	{
-		return ((char *)s);
-	}
-	else
-	{
-		return (NULL);
-	}
+	return (ft_strlen(src));
 }
-/*
+//sustituir por strlen el segundo bucle while de la ft
+
 int	main(void)
 {
-	char	a[50] = "Hola Mundo";
+	char	dest[50];
+	char	sourc[] = "Hola Mundo";
 
-	printf("El resultado de l es: %s\n", ft_strchr(a, 'l'));
-	printf("El resultado de j es: %s", ft_strchr(a, 'j'));
-
-	return (0);
+	printf("%zu", ft_strlcpy(dest, sourc, 20));
 }
-*/
+

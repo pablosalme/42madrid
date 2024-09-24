@@ -6,12 +6,12 @@
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:31:44 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/24 16:41:01 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:16:01 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
+//#include <stdio.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -27,6 +27,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
+/*
 int	main(void)
 {
 	char	str[] = "Hola que tal";
@@ -35,3 +36,4 @@ int	main(void)
 	printf("%d\n", ft_strncmp(str, str1, 4));
 	printf("%d\n", ft_strncmp(str, str1, 10));
 }
+*/

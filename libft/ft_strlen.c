@@ -6,13 +6,14 @@
 /*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 23:50:20 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/21 01:31:16 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:14:22 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <libc.h>*/
+#include "libft.h"
 
-int	ft_strlen(char *input_str)
+size_t	ft_strlen(const char *input_str)
 {
 	int	len;
 
