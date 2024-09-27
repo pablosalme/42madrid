@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 21:23:56 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/27 23:15:50 by psalmero         ###   ########.fr       */
+/*   Created: 2024/09/27 20:44:40 by psalmero          #+#    #+#             */
+/*   Updated: 2024/09/28 00:26:31 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned int	i;
+	unsigned char	*pointer;
 
-	i = 0;
-	if (dstsize > 0)
+	pointer = s;
+	while (n > 0)
 	{
-		while (i < dstsize -1 && src[i] != '\0')
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		*pointer = c;
+		pointer++;
+		n--;
 	}
-	return (ft_strlen(src));
+	return (s);
 }
-//sustituir por strlen el segundo bucle while de la ft
 /*
-int	main(void)
+int main(void)
 {
-	char	dest[50];
-	char	sourc[] = "Hola Mundo";
+    char    test[] = "Hola que tal?";
 
-	printf("%zu", ft_strlcpy(dest, sourc, 20));
+    printf("%s",(char *)ft_memset(test, 'B', 5));
+    return (0);
 }*/
