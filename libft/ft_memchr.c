@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 19:37:33 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/01 02:05:16 by pablo            ###   ########.fr       */
+/*   Created: 2024/10/01 03:18:05 by pablo             #+#    #+#             */
+/*   Updated: 2024/10/01 03:36:48 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;
-	unsigned char		*cast_d;
-	const unsigned char	*cast_s;
+	const unsigned char	*p;
+	unsigned char		cast_c;
 
+	cast_c = (unsigned char)c;
+	p = (const unsigned char *)s;
 	i = 0;
-	cast_d = (unsigned char *)dest;
-	cast_s = (unsigned char *)src;
-	while (n > i)
+	while (i < n)
 	{
-		cast_d[i] = cast_s[i];
+		if (p[i] == cast_c)
+			return ((void *)(p + i));
 		i++;
 	}
-	return (cast_d);
+	return (NULL);
 }
 /*
-int	main(void)
+int main(void)
 {
-	char	test[] = "Hola que tal";
-	char	cajon[] = "Adios";
+	const char test[] = "hola que tal";
+	char *result;
 
-	printf("Cajon antes de memcpy: %s", cajon);
-	ft_memcpy(cajon, test, 4);
-	printf("\nCajon despues de memcpy: %s", cajon);
+	result = ft_memchr(test, 'q', strlen(test));
+	printf("%s\n", result);
 
-	return (0);
+	return 0;
 }*/

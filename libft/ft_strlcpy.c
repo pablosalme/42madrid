@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 21:23:56 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/27 23:15:50 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/01 02:50:02 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsts)
 {
 	unsigned int	i;
 
 	i = 0;
-	if (dstsize > 0)
+	if (dsts > 0)
 	{
-		while (i < dstsize -1 && src[i] != '\0')
+		while (i < dsts -1 && src[i] != '\0')
 		{
 			dst[i] = src[i];
 			i++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 22:57:22 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/28 00:08:36 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/01 03:37:04 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,25 @@
 # include <string.h>
 # include <stdio.h>
 
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *input_str);
+int		ft_isalnum(int c);
 int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+
+size_t	ft_strlen(const char *input_str);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strrchr(const char *s, int c);
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dsts);
+
+int		ft_tolower(int c);
+int		ft_toupper(int c);
+
 void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 
 #endif
