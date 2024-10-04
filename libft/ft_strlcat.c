@@ -6,13 +6,13 @@
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 02:45:20 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/01 03:17:12 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/04 21:24:29 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dsts)
+/* Appends src to dst, ensuring null-termination and limited to dstsize */
+size_t	ft_strlcat(char *dst, const char *src, size_t dsts)
 {
 	size_t	i;
 	size_t	j;

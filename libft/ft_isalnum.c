@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
+/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:43:17 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/21 01:30:43 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:25:02 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
+/* Checks if the input is an alphanumeric character */
 int	ft_isalnum(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
+/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 01:12:21 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/21 01:30:40 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:23:14 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
+/* Converts a lowercase letter to uppercase */
 int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)

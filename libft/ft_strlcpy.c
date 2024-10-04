@@ -6,13 +6,13 @@
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 21:23:56 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/01 02:50:02 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/04 21:21:23 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsts)
+/* Copies src to dst, ensuring null-termination and limited to dstsize */
+size_t	ft_strlcpy(char *dst, const char *src, size_t dsts)
 {
 	unsigned int	i;
 

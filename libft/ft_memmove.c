@@ -6,12 +6,12 @@
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:33:33 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/01 02:10:16 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/04 21:24:23 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Copies n bytes from source to destination, handling overlap */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*cast_d;

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
+/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 00:24:52 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/21 01:31:00 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:21:17 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
+#include "libft.h"
+/* Checks if the input is a digit (0-9) */
 int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)

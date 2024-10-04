@@ -6,12 +6,12 @@
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 17:32:23 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/02 19:02:02 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/04 21:21:47 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Compares two blocks of memory */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*ptr1;

@@ -6,12 +6,12 @@
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 03:18:05 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/01 03:36:48 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/04 21:23:54 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Searches for a byte in a block of memory */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 01:44:31 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/04 21:22:56 by pablo            ###   ########.fr       */
+/*   Created: 2024/10/04 19:44:06 by pablo             #+#    #+#             */
+/*   Updated: 2024/10/04 21:24:35 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* Checks if the input is a printable character */
-int	ft_isprint(int c)
+/* Allocates memory for an array and sets it to zero */
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (c >= 32 && c <= 127)
-		return (1);
-	else
-		return (0);
+	void	*reservado;
+
+	reservado = (void *)malloc(count * size);
+	if (reservado == NULL)
+		return (NULL);
+	ft_bzero(reservado, count * size);
+	return (reservado);
 }
-/*
-int main(void)
+/*int	main(void)
 {
-	//char	test = 'a';
-	char	test = U'ä';
+	int	*test;
 
-	if (ft_isprint(test))
-		printf("%c es printable", test);
-	else
-		printf("%c no es printable", test);
-
-	return (0);
-}
-*/
+	test = ft_calloc(10, sizeof(int));
+	for (int i = 0; i < 10; i++)
+		printf("%i", test[i]);
+	free(test);
+	return(0);
+}*/

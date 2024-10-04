@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
+/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 01:32:05 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/21 01:42:57 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:22:26 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
+/* Checks if the input is an ASCII character */
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)

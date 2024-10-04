@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@stundet.42madrid.com    +#+  +:+       +#+        */
+/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 15:55:33 by psalmero          #+#    #+#             */
-/*   Updated: 2024/09/24 20:14:18 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:21:53 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Locates the first occurrence of a character in a string */
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (unsigned char)c && *s != '\0')

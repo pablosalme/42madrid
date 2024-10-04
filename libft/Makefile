@@ -2,9 +2,10 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
+RM = rm -f
 NAME = libft.a
-SRCS = ft_strlen.c  # Lista de archivos .c
-OBJS = $(SRCS:.c=.o)             # Convierte archivos .c a .o automáticamente
+SRCS = $(wildcard *.c)  # Lista de archivos .c
+OBJS = $(SRCS:.c=.o)    # Convierte archivos .c a .o automáticamente
 
 # Regla principal para compilar la librería
 all: $(NAME)
@@ -19,16 +20,19 @@ $(NAME): $(OBJS)
 
 # Limpiar archivos .o
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJS) *.o    # Asegurarse de eliminar cualquier archivo *.o residual
 
 # Limpiar todo, incluyendo la librería
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 # Reconstruir todo
 re: fclean all
 
 # Regla para compilar y probar
 test: all
-	$(CC) $(CFLAGS) ft_strlcpy.c -L. -llibft -o test_program
+	$(CC) $(CFLAGS) ft_strlcpy.c -L. -lft -o test_program
 	./test_program
+
+# Asegurar que los objetivos no entren en conflicto con archivos del mismo nombre
+.PHONY: all clean fclean re test

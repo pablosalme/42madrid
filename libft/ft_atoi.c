@@ -6,12 +6,12 @@
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:31:59 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/02 20:56:05 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/04 21:20:15 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Converts a string to an integer */
 int	ft_atoi(const char	*str)
 {
 	int	result;

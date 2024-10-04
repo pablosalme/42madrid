@@ -6,12 +6,12 @@
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 19:03:11 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/02 20:30:25 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/04 21:20:50 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Locates a substring within a string, limited to len bytes */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;

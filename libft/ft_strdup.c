@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 01:44:31 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/04 21:22:56 by pablo            ###   ########.fr       */
+/*   Created: 2024/10/04 20:56:30 by pablo             #+#    #+#             */
+/*   Updated: 2024/10/04 21:24:43 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* Checks if the input is a printable character */
-int	ft_isprint(int c)
+/* Duplicates a string, allocating memory for the new string */
+char	*ft_strdup(const char	*s1)
 {
-	if (c >= 32 && c <= 127)
-		return (1);
-	else
-		return (0);
+	char	*save;
+
+	save = malloc((ft_strlen(s1) + 1) * sizeof(char));
+	if (save == NULL)
+		return (NULL);
+	ft_strlcpy(save, s1, (ft_strlen(s1) + 1));
+	return (save);
 }
-/*
-int main(void)
+/*int	main(void)
 {
-	//char	test = 'a';
-	char	test = U'ä';
+	char	fuente[] = "Hola que tal";
 
-	if (ft_isprint(test))
-		printf("%c es printable", test);
-	else
-		printf("%c no es printable", test);
-
+	char	*objetivo = ft_strdup(fuente);
+	printf("%s", objetivo);
+	free(objetivo);
 	return (0);
-}
-*/
+}*/
