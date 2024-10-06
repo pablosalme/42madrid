@@ -6,7 +6,7 @@
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 22:57:22 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/04 21:26:56 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/06 23:48:24 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ char	*ft_strrchr(const char *s, int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dsts);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char	*s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);
@@ -47,5 +50,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 void	*ft_calloc(size_t count, size_t size);
+
+char	**ft_split(char const *s, char c);
 
 #endif
