@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:43:17 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/04 21:25:02 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/08 00:17:20 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 /* Checks if the input is an alphanumeric character */
 int	ft_isalnum(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
+	if ((c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')
+		|| (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }
