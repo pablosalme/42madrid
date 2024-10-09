@@ -6,7 +6,7 @@
 /*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 22:57:22 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/06 23:48:24 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/09 23:43:55 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 
 int		ft_atoi(const char	*str);
+char	*ft_itoa(int n);
 
 void	ft_bzero(void *s, size_t n);
 
