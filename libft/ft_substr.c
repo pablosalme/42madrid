@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:24:21 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/05 17:51:36 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/13 00:30:44 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	resultado = malloc((len + 1) * sizeof(char));
 	if (!resultado)
 		return (NULL);
-	ft_strlcpy(resultado, s + start, len);
+	ft_strlcpy(resultado, s + start, len +1);
 	return (resultado);
 }
 /*int	main(void)

@@ -6,7 +6,7 @@
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 23:09:03 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/13 00:04:32 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/13 00:52:51 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s || fd < 0)
+		return ;
 	write(fd, s, ft_strlen(s));
-	write(1, "\n", 1);
+	write(fd, "\n", 1);
 }
 
 /*int	main(void)
