@@ -4,9 +4,10 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 NAME = libft.a
-SRCS = $(wildcard *.c)  # Lista de archivos .c
-OBJS = $(SRCS:.c=.o)    # Convierte archivos .c a .o automáticamente
+SRCS = $(wildcard *.c)
+OBJS = $(SRCS:.c=.o)
 
+# Objetivo : Prerequisitos
 # Regla principal para compilar la librería
 all: $(NAME)
 
@@ -20,7 +21,7 @@ $(NAME): $(OBJS)
 
 # Limpiar archivos .o
 clean:
-	$(RM) $(OBJS) *.o    # Asegurarse de eliminar cualquier archivo *.o residual
+	$(RM) $(OBJS) *.o
 
 # Limpiar todo, incluyendo la librería
 fclean: clean
