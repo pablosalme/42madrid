@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 18:41:28 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/06 19:37:54 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/13 01:47:55 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Split a string based on a character*/
 static int	count_subs(char const *s, char c)
 {
 	int	cuenta;

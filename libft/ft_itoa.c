@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 22:54:53 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/09 23:38:32 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/13 01:48:11 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Convert integer to strin*/
 static int	special_cases(int n)
 {
 	if (n == -2147483648)

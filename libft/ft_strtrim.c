@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:13:54 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/06 18:13:47 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/13 01:49:29 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Removes all characters from the string set from the beginning and from the
+end of s1 from the beginning and from the end of s1*/
 static int	ft_in_set(char c, const char *set)
 {
 	while (*set)

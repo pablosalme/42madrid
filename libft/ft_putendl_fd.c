@@ -6,12 +6,12 @@
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 23:09:03 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/13 00:52:51 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/13 01:48:05 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Send char to file description with new line at the end*/
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s || fd < 0)

@@ -6,12 +6,12 @@
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:24:21 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/13 00:30:44 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/13 01:50:01 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Create substring from string s*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*resultado;

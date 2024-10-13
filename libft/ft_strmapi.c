@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 18:03:11 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/12 18:55:21 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/13 01:47:49 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Apply f function to all characters from s*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*result;

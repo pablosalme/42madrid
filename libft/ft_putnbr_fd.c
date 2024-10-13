@@ -6,12 +6,12 @@
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 23:45:31 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/13 00:06:00 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/13 01:48:01 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Send number to file descriptor*/
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)

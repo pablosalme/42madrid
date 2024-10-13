@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 20:30:57 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/12 20:49:45 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/13 01:48:13 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* Send char to file description*/
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
