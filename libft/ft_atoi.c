@@ -6,13 +6,13 @@
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:31:59 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/13 00:17:46 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/14 02:41:32 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* Converts a string to an integer */
-int	ft_atoi(const char	*str)
+/* Converts a nptring to an integer */
+int	ft_atoi(const char	*nptr)
 {
 	int	result;
 	int	menos;
@@ -21,21 +21,21 @@ int	ft_atoi(const char	*str)
 	sign_count = 0;
 	result = 0;
 	menos = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	while (*str == '-' || *str == '+')
+	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	while (*nptr == '-' || *nptr == '+')
 	{
-		if (*str == '-')
+		if (*nptr == '-')
 			menos *= -1;
-		str++;
+		nptr++;
 		sign_count++;
 		if (sign_count > 1)
 			return (0);
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		result = result * 10 + *str - '0';
-		str++;
+		result = result * 10 + *nptr - '0';
+		nptr++;
 	}
 	return (result * menos);
 }

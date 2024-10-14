@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 20:56:30 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/04 21:24:43 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/14 02:47:03 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /* Duplicates a string, allocating memory for the new string */
-char	*ft_strdup(const char	*s1)
+char	*ft_strdup(const char	*s)
 {
 	char	*save;
 
-	save = malloc((ft_strlen(s1) + 1) * sizeof(char));
+	save = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (save == NULL)
 		return (NULL);
-	ft_strlcpy(save, s1, (ft_strlen(s1) + 1));
+	ft_strlcpy(save, s, (ft_strlen(s) + 1));
 	return (save);
 }
 /*int	main(void)

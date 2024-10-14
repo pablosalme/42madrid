@@ -6,32 +6,30 @@
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 19:03:11 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/08 00:44:33 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/14 02:46:33 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /* Locates a substring within a string, limited to len bytes */
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	if (*needle == '\0')
-		return ((char *)haystack);
-	if (haystack == NULL || len == 0)
-		return (NULL);
+	if (*little == '\0')
+		return ((char *)big);
 	i = 0;
-	while (haystack[i] != '\0' && i < len)
+	while (big[i] != '\0' && i < len)
 	{
 		j = 0;
-		while (needle[j] != '\0' && haystack[i + j] == needle[j]
+		while (little[j] != '\0' && big[i + j] == little[j]
 			&& (i + j) < len)
 		{
 			j++;
 		}
-		if (needle[j] == '\0')
-			return ((char *)(haystack + i));
+		if (little[j] == '\0')
+			return ((char *)(big + i));
 		i++;
 	}
 	return (NULL);

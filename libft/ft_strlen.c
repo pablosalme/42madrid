@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 23:50:20 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/04 21:21:36 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/14 02:43:40 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /* Returns the length of a string */
-size_t	ft_strlen(const char *input_str)
+size_t	ft_strlen(const char *str)
 {
 	int	len;
 
 	len = 0;
-	while (*input_str)
+	while (*str)
 	{
 		len++;
-		input_str++;
+		str++;
 	}
 	return (len);
 }

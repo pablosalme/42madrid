@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:44:06 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/04 21:24:35 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/14 02:50:40 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /* Allocates memory for an array and sets it to zero */
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*reservado;
 
-	reservado = (void *)malloc(count * size);
+	reservado = (void *)malloc(nmemb * size);
 	if (reservado == NULL)
 		return (NULL);
-	ft_bzero(reservado, count * size);
+	ft_bzero(reservado, nmemb * size);
 	return (reservado);
 }
 /*int	main(void)
