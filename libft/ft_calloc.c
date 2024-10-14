@@ -6,7 +6,7 @@
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:44:06 by pablo             #+#    #+#             */
-/*   Updated: 2024/10/14 02:50:40 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/14 03:02:10 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*reservado;
 
+	if (size != 0 && nmemb >= SIZE_MAX / size)
+		return (0);
 	reservado = (void *)malloc(nmemb * size);
 	if (reservado == NULL)
 		return (NULL);

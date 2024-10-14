@@ -6,7 +6,7 @@
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 22:57:22 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/14 02:51:31 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/14 03:03:44 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define LIBFT_H
 
 # include <stddef.h>
-# include <string.h>
-# include <stdio.h>
+//# include <string.h>
+//# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
+//# include <fcntl.h>
+# include <stdint.h>
 
 int		ft_atoi(const char	*nptr);
 char	*ft_itoa(int n);
