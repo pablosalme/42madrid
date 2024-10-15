@@ -1,38 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+buff = "Hola";
 
-typedef struct list_struct
-{
-    char    *str;
-    struct list_struct    *next;
-}   t_list;
+linea_sin_formar = strdup(buff);
+free(buff);
+buff = "que ";  // linea_sin_formar = "Hola"
+linea_sin_formar = strjoin(linea_sin_formar, buff);
+free(buff);
+buff = "tal?";
+linea_sin_formar = strjoin(llinea_sin_formar, buff);
+free(buff);
 
-int main() {
-    // Crear el primer nodo
-    t_list *head = malloc(sizeof(t_list));
-    head->str = strdup("Primer nodo"); // Copia la cadena en memoria dinámica
-    head->next = malloc(sizeof(t_list)); // Crear el segundo nodo
 
-    // Crear el segundo nodo
-    head->next->str = strdup("Segundo nodo");
-    head->next->next = NULL; // Fin de la lista
 
-    // Imprimir los elementos de la lista
-    t_list *current = head;
-    while (current != NULL) {
-        printf("%s\n", current->str);
-        current = current->next; // Mover al siguiente nodo
-    }
-
-    // Liberar la memoria
-    current = head;
-    while (current != NULL) {
-        t_list *temp = current;
-        current = current->next;
-        free(temp->str); // Liberar la cadena
-        free(temp);      // Liberar el nodo
-    }
-
-    return 0;
-}
+buff = ".\n";
+strchr analizar salto de __LINE__
+linea_sin_formar = strjoin(llinea_sin_formar, buff);
+linea_sin_formar = "Hola que tal?. \n"
