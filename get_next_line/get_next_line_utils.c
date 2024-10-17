@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_lline_utils.c                             :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 00:31:12 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/16 01:24:10 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/17 02:17:54 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	while (*s != (unsigned char)c && *s != '\0')
-	{
-		s++;
-	}
-	if (*s== (unsigned char)c)
-	{
-		return ((char *)s);
-	}
-	else
-	{
+	char	*result;
+	int		len_s1;
+	int		len_s2;
+	int		i;
+
+	if (!s1 || !s2)
 		return (NULL);
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	result = malloc((len_s1 + len_s2 + 1) * sizeof(char));
+	if (!result)
+		return (NULL);
+	while (s1[i])
+	{
+		result[i] = s1[i];
+		i++;
 	}
+	result[i] = 0;
+	ft_strlcat(result, s2, len_s1 + len_s2 + 1);
+	return (result);
 }
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	len;
 
