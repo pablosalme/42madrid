@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 00:31:12 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/17 02:17:54 by psalmero         ###   ########.fr       */
+/*   Updated: 2024/10/18 20:30:43 by pablo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len_s2;
 	int		i;
 
+	i = 0;
 	if (!s1 || !s2)
 		return (NULL);
 	len_s1 = ft_strlen(s1);
@@ -54,6 +55,7 @@ char	*ft_strdup(const char	*s)
 	char	*save;
 	unsigned int	i;
 
+	i = 0;
 	save = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (save == NULL)
 		return (NULL);
