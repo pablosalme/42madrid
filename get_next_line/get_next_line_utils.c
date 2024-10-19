@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pablo <pablo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 00:31:12 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/18 20:30:43 by pablo            ###   ########.fr       */
+/*   Updated: 2024/10/19 23:18:21 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		result[i] = s1[i];
 		i++;
 	}
-	result[i] = 0;
 	ft_strlcat(result, s2, len_s1 + len_s2 + 1);
 	return (result);
 }
