@@ -1,17 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 22:14:35 by psalmero          #+#    #+#             */
-/*   Updated: 2024/10/20 01:07:24 by psalmero         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "get_next_line.h"
-char	*ft_strchr(char *s, int c);
+char	*ft_strchr(const char *s, int c);
 
 int main(void)
 {
@@ -28,7 +17,7 @@ int main(void)
 		printf("Error al abrir el archivo\n");
 		return (1);
 	}
-
+	line = "";
 	// Llamamos a get_next_line para leer cada línea
 	while (i < 3)
 	{
@@ -45,18 +34,20 @@ int main(void)
 char	*get_next_line(int fd)
 {
 	static char	*n_line;
-	//char	*temp;
+	char	*temp;
 	char	*line;
 	char	*buffer;
 	ssize_t	n_bytes;
+	size_t	len;
+	char	*f_line;
 
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = ft_strdup("");
 	n_bytes = 1;
 	n_line = ft_strdup("");
-	while (n_bytes > 0 && ft_strchr(line, 10) == NULL)
+	while (n_bytes > 0 && ft_strchr(line, '\n') == NULL)
 	{
 		buffer = (char	*)malloc((BUFFER_SIZE + 1) * sizeof(char));
 		if (!buffer)
@@ -70,35 +61,35 @@ char	*get_next_line(int fd)
 		else if (n_bytes == 0)
 			break;
 		buffer[n_bytes] = 0;
-		if (n_line == NULL)
-		{
-			line = ft_strjoin(line, buffer);
-		}
-		else
+		//MIRAR CONDICION (PROBAR PONERLA AL REVES)
+		if (n_line != NULL)
 		{
 			line = ft_strjoin(n_line, buffer);
 			n_line = NULL;
 		}
+		else
+		{
+			line = ft_strjoin(line, buffer);
+		}
 		free(buffer);
 	}
-	return (line);
+	temp = ft_strchr(line, '\n');
+	len = (ft_strlen(line) - ft_strlen(temp));
+	f_line = ft_substr(line, 0, len);
+	n_line = ft_substr(temp, 1, (ft_strlen(temp) - 1));
+	printf("%s\n", n_line);
+	free(line);
+	return (f_line);
 }
-
-
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
-	char			cc;
-
-	cc = (char) c;
-	i = 0;
-	while (s[i])
+	while (*s != '\0')
 	{
-		if (s[i] == cc)
-			return ((char *) &s[i]);
-		i++;
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
 	}
-	if (s[i] == cc)
-		return ((char *) &s[i]);
-	return (NULL);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (0);
 }
