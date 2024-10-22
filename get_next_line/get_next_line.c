@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psalmero <psalmero@student.42madrid.com>   #+#  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024-10-22 06:21:38 by psalmero          #+#    #+#             */
+/*   Updated: 2024-10-22 06:21:38 by psalmero         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "get_next_line.h"
-char	*ft_strchr(const char *s, int c);
+static char	*ft_strchr(const char *s, int c);
 
 int main(void)
 {
@@ -46,7 +57,6 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = ft_strdup("");
 	n_bytes = 1;
-	n_line = ft_strdup("");
 	while (n_bytes > 0 && ft_strchr(line, '\n') == NULL)
 	{
 		buffer = (char	*)malloc((BUFFER_SIZE + 1) * sizeof(char));
@@ -64,11 +74,13 @@ char	*get_next_line(int fd)
 		//MIRAR CONDICION (PROBAR PONERLA AL REVES)
 		if (n_line != NULL)
 		{
+			printf("%s", n_line);
 			line = ft_strjoin(n_line, buffer);
 			n_line = NULL;
 		}
 		else
 		{
+			n_line = ft_strdup("");
 			line = ft_strjoin(line, buffer);
 		}
 		free(buffer);
@@ -81,7 +93,7 @@ char	*get_next_line(int fd)
 	free(line);
 	return (f_line);
 }
-char	*ft_strchr(const char *s, int c)
+static char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
 	{

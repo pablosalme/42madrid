@@ -22,9 +22,7 @@
 # include <stdlib.h>
 
 char	*get_next_line(int fd);
-char	*get_raw_line(int fd, char *n_line, char *buffer);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char	*s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
