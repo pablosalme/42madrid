@@ -1,67 +1,55 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@student.42madrid.com>   #+#  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-10-22 06:21:38 by psalmero          #+#    #+#             */
-/*   Updated: 2024-10-22 06:21:38 by psalmero         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
+static char	*get_line(int fd, char *buffer, char *n_line);
+static char	*clean_line(char *line);
 static char	*ft_strchr(const char *s, int c);
 
-int main(void)
+/*int	main(void)
 {
 	int	fd;
 	char	*line;
 	int	i;
 
 	i = 0;
-
-	// Abrimos el archivo en modo lectura
 	fd = open("test.txt", O_RDONLY);
-	if (fd < 0)
-	{
-		printf("Error al abrir el archivo\n");
-		return (1);
-	}
-	line = "";
-	// Llamamos a get_next_line para leer cada línea
 	while (i < 3)
 	{
 		line = get_next_line(fd);
-		printf("Linea leida: %s\n", line);
+		printf("%d)%s", i, line);
+		free(line);
 		i++;
 	}
-
-	// Cerramos el archivo
 	close(fd);
 	return (0);
-}
+}*/
 
 char	*get_next_line(int fd)
 {
 	static char	*n_line;
-	char	*temp;
 	char	*line;
 	char	*buffer;
-	ssize_t	n_bytes;
-	size_t	len;
-	char	*f_line;
 
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = ft_strdup("");
+	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
+	line = get_line(fd, buffer, n_line);
+	free(buffer);
+	buffer = NULL;
+	if (!line)
+		return (NULL);
+	n_line = clean_line(line);
+	return (line);
+}
+static char	*get_line(int fd, char *buffer, char *n_line)
+{
+	ssize_t	n_bytes;
+	char	*temp;
+
 	n_bytes = 1;
-	while (n_bytes > 0 && ft_strchr(line, '\n') == NULL)
+	while (n_bytes > 0)
 	{
-		buffer = (char	*)malloc((BUFFER_SIZE + 1) * sizeof(char));
-		if (!buffer)
-			return (NULL);
 		n_bytes = read(fd, buffer, BUFFER_SIZE);
 		if (n_bytes < 0)
 		{
@@ -70,29 +58,41 @@ char	*get_next_line(int fd)
 		}
 		else if (n_bytes == 0)
 			break;
-		buffer[n_bytes] = 0;
-		//MIRAR CONDICION (PROBAR PONERLA AL REVES)
-		if (n_line != NULL)
-		{
-			printf("%s", n_line);
-			line = ft_strjoin(n_line, buffer);
-			n_line = NULL;
-		}
-		else
-		{
+		buffer[n_bytes] = '\0';
+		if (!n_line)
 			n_line = ft_strdup("");
-			line = ft_strjoin(line, buffer);
-		}
-		free(buffer);
+		temp = n_line;
+		n_line = ft_strjoin(temp, buffer);
+		free(temp);
+		temp = NULL;
+		if (ft_strchr(buffer, '\n'))
+			break;
 	}
-	temp = ft_strchr(line, '\n');
-	len = (ft_strlen(line) - ft_strlen(temp));
-	f_line = ft_substr(line, 0, len);
-	n_line = ft_substr(temp, 1, (ft_strlen(temp) - 1));
-	printf("%s\n", n_line);
-	free(line);
-	return (f_line);
+	return (n_line);
 }
+
+static char	*clean_line(char *line)
+{
+	char	*leftover;
+	ssize_t	i;
+	ssize_t len_line;
+
+	i = 0;
+	len_line = ft_strlen(line);
+	while (line[i] != '\0' && line[i] != '\n')
+		i++;
+	if (line[i] == EOF || line[1] == EOF)
+		return (NULL);
+	leftover = ft_substr(line, i + 1, len_line - 1);
+	if (*leftover == 0)
+	{
+		free(leftover);
+		return (NULL);
+	}
+	line[i + 1] = 0; //evitar fugas de memoria y otro tipo de errores
+	return (leftover);
+}
+
 static char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
