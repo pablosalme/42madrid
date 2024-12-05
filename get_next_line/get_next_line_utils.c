@@ -54,7 +54,7 @@ size_t	ft_strlen(const char *str)
 
 char	*ft_strdup(const char	*s)
 {
-	char	*save;
+	char			*save;
 	unsigned int	i;
 
 	i = 0;
