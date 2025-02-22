@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalmero <psalmero@student.42madrid.com>   #+#  +:+       +#+        */
+/*   By: psalmero <psalmero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-12-04 23:28:59 by psalmero          #+#    #+#             */
-/*   Updated: 2024-12-04 23:28:59 by psalmero         ###   ########.fr       */
+/*   Created: 2024/12/04 23:28:59 by psalmero          #+#    #+#             */
+/*   Updated: 2025/02/22 21:22:53 by psalmero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "get_next_line.h"
 
 static char	*get_line(int fd, char *buffer, char *n_line);
@@ -26,6 +27,7 @@ char	*get_next_line(int fd)
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
+	buffer[0] = '\0';
 	line = get_line(fd, buffer, n_line);
 	free(buffer);
 	buffer = NULL;
@@ -41,25 +43,24 @@ static char	*get_line(int fd, char *buffer, char *n_line)
 	char	*temp;
 
 	n_bytes = 1;
-	while (n_bytes > 0)
+	while (!ft_strchr(buffer, '\n') && n_bytes > 0)
 	{
 		n_bytes = read(fd, buffer, BUFFER_SIZE);
 		if (n_bytes < 0)
 		{
 			free(n_line);
+			n_line = NULL;
 			return (NULL);
 		}
 		else if (n_bytes == 0)
 			break ;
 		buffer[n_bytes] = '\0';
-		if (!n_line)
-			n_line = ft_strdup("");
 		temp = n_line;
 		n_line = ft_strjoin(temp, buffer);
 		free(temp);
 		temp = NULL;
-		if (ft_strchr(buffer, '\n'))
-			break ;
+		if (!n_line)
+			return (NULL);
 	}
 	return (n_line);
 }
@@ -80,6 +81,7 @@ static char	*clean_line(char *line)
 	if (*leftover == 0)
 	{
 		free(leftover);
+		leftover = NULL;
 		return (NULL);
 	}
 	line[i + 1] = 0;
@@ -98,19 +100,23 @@ static char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (0);
 }
-/*int	main(void)
-{
-	int	fd;
-	char	*line;
-	int	i;
 
+/*int	main(int argc, char **argv)
+{
+	int		fd;
+	char	*line;
+	int		i;
+
+	if (argc != 2)
+		return (1);
 	i = 0;
-	fd = open("test.txt", O_RDONLY);
-	while (i < 3)
+	fd = open(argv[1], O_RDONLY);
+	line = get_next_line(fd);
+	while (line)
 	{
-		line = get_next_line(fd);
 		printf("%d)%s", i, line);
 		free(line);
+		line = get_next_line(fd);
 		i++;
 	}
 	close(fd);
